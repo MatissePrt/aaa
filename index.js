@@ -1,5 +1,4 @@
 import express from "express";
-import dotenv from "dotenv";
 import userRouter from "./routes/userRouter.js";
 import creatorRouter from "./routes/creatorRouter.js";
 import postRouter from "./routes/postRouter.js";
@@ -7,7 +6,6 @@ import subRequestRouter from "./routes/subRequestRouter.js"
 import subscriberRouter from "./routes/subscriberRouter.js";
 import { getDbConnection } from "./config/db.js";
 
-const result = dotenv.config();
 if (result.error) {
     console.error("Erreur lors du chargement du fichier .env :", result.error);
     process.exit(1);
