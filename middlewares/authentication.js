@@ -2,9 +2,7 @@ import jwt from "jsonwebtoken";
 import mssql from "mssql";
 import {getDbConnection} from "../config/db.js";
 
-import dotenv from "dotenv";
 
-dotenv.config();
 
 const jwtSecret = process.env.JWT_SECRET
 
