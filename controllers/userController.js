@@ -1,10 +1,8 @@
 import mssql from "mssql";
 import userSchema from "../models/user.js";
 import bcrypt from "bcrypt";
-import dotenv from "dotenv";
 import jwt from "jsonwebtoken";
 import { getDbConnection } from "../config/db.js";
-dotenv.config();
 
 export async function create(req, res) {
   const { name, email, password } = req.body;
