@@ -1,5 +1,4 @@
 import { BlobServiceClient } from '@azure/storage-blob';
-import dotenv from 'dotenv';
 
 dotenv.config();
 
