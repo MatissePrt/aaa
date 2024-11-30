@@ -5,10 +5,10 @@ dotenv.config(); // Charger les variables d'environnement
 
 // Configuration de la base de données
 const dbConfig = {
-  user: process.env.DB_USER || "linkup-supinfo",
-  password: process.env.DB_PASSWORD || "supinflop37!",
-  server: process.env.DB_SERVER || "linkup-db.database.windows.net",
-  database: process.env.DB_NAME || "LinkUpDB",
+  user: "linkup-supinfo",
+  password: "supinflop37!",
+  server: "linkup-db.database.windows.net",
+  database: "LinkUpDB",
   options: {
     encrypt: true, // Utilisé pour Azure SQL
     enableArithAbort: true, // Recommandé par mssql
