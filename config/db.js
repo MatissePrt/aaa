@@ -1,7 +1,5 @@
 import mssql from "mssql";
-import dotenv from "dotenv";
 
-dotenv.config(); // Charger les variables d'environnement
 
 // Configuration de la base de données
 const dbConfig = {
