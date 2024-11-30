@@ -6,11 +6,6 @@ import subRequestRouter from "./routes/subRequestRouter.js"
 import subscriberRouter from "./routes/subscriberRouter.js";
 import { getDbConnection } from "./config/db.js";
 
-if (result.error) {
-    console.error("Erreur lors du chargement du fichier .env :", result.error);
-    process.exit(1);
-}
-
 // Initialisation de l'application
 const app = express();
 const PORT = process.env.PORT || 3000;
