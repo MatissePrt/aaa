@@ -3,7 +3,7 @@ import { SecretClient } from "@azure/keyvault-secrets";
 
 const url = `https://linkup-vault.vault.azure.net/`;
 
-const credential = new DefaultAzureCredential();
+const credential = new ManagedIdentityCredential();
 const client = new SecretClient(url, credential);
 
 async function getSecrets() {
