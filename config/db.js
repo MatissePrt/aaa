@@ -11,7 +11,7 @@ async function initDbConfig() {
     server: secrets.DB_SERVER,
     database: secrets.DB_DATABASE,
     options: {
-      encrypt: true, // Utilisé pour Azure SQL
+      encrypt: true, 
       enableArithAbort: true,
       connectTimeout: 30000,
       requestTimeout: 30000,
