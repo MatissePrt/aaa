@@ -1,4 +1,4 @@
-import { DefaultAzureCredential } from "@azure/identity";
+import { ManagedIdentityCredential } from "@azure/identity";
 import { SecretClient } from "@azure/keyvault-secrets";
 
 const url = `https://linkup-vault.vault.azure.net/`;
