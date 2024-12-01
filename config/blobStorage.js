@@ -1,12 +1,17 @@
-import { BlobServiceClient } from '@azure/storage-blob';
+import { BlobServiceClient } from "@azure/storage-blob";
+import getSecrets from "./config.js";
 
-const AZURE_STORAGE_CONNECTION = 
-    "DefaultEndpointsProtocol=https;AccountName=linkupdb;AccountKey=RrU7xPpMeyUfm0Fq7cCp0q8QfOJJGIUKSWxRBLVYI6O1qXGHmpBiPPrzxZiVOUlM/0ichcTKoQMu+ASty8jb/A==;EndpointSuffix=core.windows.net";
+let blobServiceClient;
 
-if (!AZURE_STORAGE_CONNECTION) {
-    throw new Error('Azure Storage Connection string not found');
+async function initBlobClient() {
+  const secrets = await getSecrets();
+  const AZURE_STORAGE_CONNECTION = secrets.AZURE_STORAGE_CONNECTION;
+
+  if (!AZURE_STORAGE_CONNECTION) {
+    throw new Error("Azure Storage Connection string not found");
+  }
+
+  blobServiceClient = BlobServiceClient.fromConnectionString(AZURE_STORAGE_CONNECTION);
 }
 
-const blobServiceClient = BlobServiceClient.fromConnectionString(AZURE_STORAGE_CONNECTION);
-
-export { blobServiceClient };
+export { blobServiceClient, initBlobClient };
