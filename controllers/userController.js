@@ -39,7 +39,7 @@ export async function create(req, res) {
       return res.status(400).json({ error: "Cet email est déjà utilisé." });
     }
     console.error("Database error:", err);
-    res.status(500).json({ error: "Erreur interne du serveur." });
+    res.status(500).json({ error: "Erreur interne du serveur." + err });
   }
 }
 
@@ -90,7 +90,7 @@ export async function login(req, res) {
     pool.close();
   } catch (err) {
     console.error("Database error:", err);
-    res.status(500).json({ error: "Erreur interne du serveur." });
+    res.status(500).json({ error: "Erreur interne du serveur." + err });
   }
 }
 
